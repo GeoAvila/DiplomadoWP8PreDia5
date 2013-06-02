@@ -23,10 +23,21 @@ namespace Ejercicio5
             //Console.ReadKey();
             dynamic obj = new ExpandoObject();
             obj.Saludo = "Hola a todos los valientes asistentes al Prepedeutico de c#";
-            obj.MiMetodo = (Action<string>)((x) => Console.WriteLine(x));
-            obj.Metodo(obj.Saludo);
-            obj.Metodo("buuuuuu");
-            
+            obj.Evento = null;
+            obj.Evento += (Action<object,EventArgs>)((o, e) => Console.WriteLine("Saludos desde el manejador de eventos"));
+            obj.Metodo = (Action<string>)((x) =>
+                {
+                    Console.WriteLine(x);
+                    obj.Evento(obj, EventArgs.Empty);
+                });
+            obj.metodo("buuuu");
+            foreach (var item in obj)
+            {
+                Console.WriteLine(item);
+            }
+
+
+            Console.ReadKey();
         }
     }
 }
