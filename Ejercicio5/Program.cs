@@ -22,9 +22,10 @@ namespace Ejercicio5
             //}
             //Console.ReadKey();
             dynamic obj = new ExpandoObject();
-            obj.Mipropiedad = "Hola";
-            obj.OtraPropiedad = 3.1416;
-            Console.WriteLine(obj.OtraPropiedad);
+            obj.Saludo = "Hola a todos los valientes asistentes al Prepedeutico de c#";
+            obj.MiMetodo = (Action<string>)((x) => Console.WriteLine(x));
+            obj.Metodo(obj.Saludo);
+            obj.Metodo("buuuuuu");
             
         }
     }
