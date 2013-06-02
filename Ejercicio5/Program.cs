@@ -16,7 +16,6 @@ namespace Ejercicio5
             //            where n % 2 == 0
             //            select n;
             var pares = numeros.Where(delegate(int n) { return n % 2 == 0; });
-
             //foreach (var n in pares)
             //{
             //    Console.WriteLine(n);
