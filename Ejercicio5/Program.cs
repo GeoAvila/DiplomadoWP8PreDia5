@@ -10,15 +10,15 @@ namespace Ejercicio5
     {
         static void Main(string[] args)
         {
-            int[] numeros = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            var numeros = Enumerable.Range(1,1000);
 
             //var pares = from n in numeros
             //            where n % 2 == 0
             //            select n * n;
-            var pares = numeros.Where(n => n % 2 == 0).Select(n => new {MyProperty = n.ToString(),MyValue = n , MyProjectedValud = n*n });
+            var pares = numeros.Where(n => n % 2 == 0).ToArray();
             foreach (var n in pares)
             {
-                Console.WriteLine(n.MyProperty);
+                Console.WriteLine(n);
             }
             Console.ReadKey();
             
