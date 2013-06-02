@@ -15,12 +15,11 @@ namespace Ejercicio5
             //var pares = from n in numeros
             //            where n % 2 == 0
             //            select n;
-            var pares = numeros.Where(n => n %2 ==2);
-            //foreach (var n in pares)
-            //{
-            //    Console.WriteLine(n);
-            //}
-
+            var pares = numeros.Where(n => n %2 ==0);
+            foreach (var n in pares)
+            {
+                Console.WriteLine(n);
+            }
             Console.ReadKey();
             
         }
