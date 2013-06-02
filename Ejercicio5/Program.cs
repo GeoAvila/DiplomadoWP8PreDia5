@@ -14,14 +14,22 @@ namespace Ejercicio5
 
             //var pares = from n in numeros
             //            where n % 2 == 0
-            //            select n;
-            var pares = numeros.Where(n => n %2 ==0);
+            //            select n * n;
+            var pares = numeros.Where(n => n % 2 == 0).Select(n => new MiClase {MyProperty = n.ToString() }).Select(c => int.Parse(c.MyProperty));
             foreach (var n in pares)
             {
                 Console.WriteLine(n);
             }
             Console.ReadKey();
             
+        }
+    }
+    public class MiClase
+    {
+        public string MyProperty { get; set; }
+        public MiClase()
+        {
+
         }
     }
 }
