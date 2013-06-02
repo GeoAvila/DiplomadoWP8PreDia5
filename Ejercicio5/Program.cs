@@ -30,7 +30,7 @@ namespace Ejercicio5
                     Console.WriteLine(x);
                     obj.Evento(obj, EventArgs.Empty);
                 });
-            obj.metodo("buuuu");
+            obj.Metodo("buuuu");
             foreach (var item in obj)
             {
                 Console.WriteLine(item);
